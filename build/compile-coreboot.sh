@@ -23,11 +23,13 @@ if [ ! -d "$COREBOOT_DIR" ]; then
   mv flashregion_2_intel_me.bin me.bin
   mv flashregion_3_gbe.bin gbe.bin
 
+  cd $COREBOOT_DIR
+
   ## Add Coreboot cross architechture gcc
   make crossgcc-i386 CPUS=4 -b
   make iasl
 
-  cd $COREBOOT_DIR
+
 else
   cd $COREBOOT_DIR
   git pull origin master
