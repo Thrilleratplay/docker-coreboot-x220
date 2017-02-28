@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 RUN apt-get -qq -y update && \
-    apt-get install -y git flex bison build-essential libncurses5-dev curl zlib1g-dev python wget && \
+    apt-get install -y git flex bison build-essential libncurses5-dev curl zlib1g-dev python wget texinfo && \
     apt-get clean && \
     apt-get autoremove
 
