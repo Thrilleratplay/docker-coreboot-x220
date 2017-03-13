@@ -1,2 +1,3 @@
 build/coreboot
 build/stock_bios.bin
+build/coreboot.rom

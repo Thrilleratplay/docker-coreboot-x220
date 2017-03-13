@@ -10,4 +10,4 @@ VOLUME /root/build
 
 WORKDIR /root/build
 
-# CMD ["/root/build/compile-coreboot.sh"]
+CMD ["/root/build/compile-coreboot.sh"]

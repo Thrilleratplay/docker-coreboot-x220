@@ -1,3 +1,5 @@
+#!/bin/bash
+
 BUILD_DIR="/root/build"
 COREBOOT_DIR="$BUILD_DIR/coreboot"
 STOCK_BIOS_ROM="stock_bios.bin"
@@ -46,8 +48,9 @@ fi
 
 make
 
-if [ ! -d "$COREBOOT_DIR" ]; then
-  "Your new BIOS is ./build/coreboot/build/coreboot.rom"
-else
+if [ ! -f "$COREBOOT_DIR/build/coreboot.rom" ]; then
   echo "Uh oh. Things did not go according to plan."
+else
+  mv "$COREBOOT_DIR/build/coreboot.rom" $BUILD_DIR
+  echo "Your new BIOS is ./build/coreboot.rom"
 fi

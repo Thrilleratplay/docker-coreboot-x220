@@ -18,12 +18,11 @@ IS_RUNNING=$(docker inspect -f '{{.State.Running}}' $CONTAINER_NAME 2>/dev/null)
 if [[ $IS_RUNNING == "true" ]]; then
 	docker attach $CONTAINER_NAME
 elif [[ $IS_RUNNING == "false" ]]; then
-	docker start -i $CONTAINER_NAME
+	docker start $CONTAINER_NAME
 else
 	docker run \
 		   -v $(pwd)/build:/root/build \
-		   -i -t --name $CONTAINER_NAME $IMAGE_NAME \
-			   bash
+		   --name $CONTAINER_NAME $IMAGE_NAME
 fi
 
 exit $?
