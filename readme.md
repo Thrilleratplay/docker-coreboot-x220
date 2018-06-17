@@ -1,3 +1,7 @@
+## ABANDONED 
+Development moved to [coreboot-builder-scripts](https://github.com/Thrilleratplay/coreboot-builder-scripts)
+
+
 ## docker-coreboot-build
 Build environment to compile and update an existing Coreboot instance.  This is intended for the Thinkpad X220 but
 could easily be adapted for other systems.
